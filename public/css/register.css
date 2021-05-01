@@ -1,0 +1,124 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+header{
+    background-color: #EAC926;
+    padding: 20px;
+    font-weight : bold;
+    text-align: center;
+}
+
+.logo-header {
+    width: 50%;
+    padding: 10px;
+}
+
+main {
+    background-color: #ebebeb;
+}
+
+.formulario {
+    padding: 40px;
+}
+
+.titulos-formulario {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.partes-formulario {
+    margin-bottom: 15px;
+}
+
+.partes-formulario label {
+    display: block;
+}
+
+.para-escribir {
+    width: 70%;
+    padding: 2px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.opciones {
+    font-size: 14px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.boton {
+    background-color: #39b54a;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.boton a {
+    text-decoration: none;
+    color: white;
+}
+
+footer{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+}
+
+.footer-mensajes {
+    padding: 5px;
+    margin: 0px;
+}
+
+.mini-titulo {
+    font-size: 14px;
+    font-weight : bold;
+}
+
+.icono-footer i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #03264C;
+}
+
+.pie-final {
+    text-align: left;
+    font-size: 12px;
+    padding: 5%;
+}
+
+@media (min-width: 769px) {
+    .boton {
+        transition: 500ms;
+    }
+
+    .boton:hover {
+        background-color: #0022AA;
+    }
+    
+    footer {
+        display: flex;
+        padding: 15px;
+    }
+
+    .pie-final {
+        padding: 2px;
+        margin-left: 20px;
+    }
+
+    .footer-mensajes {
+        padding-top: 20px;
+        transition: 500ms;
+    }
+
+    .footer-mensajes:hover .icono-footer i {
+        color: #39b54a;
+    }
+}
