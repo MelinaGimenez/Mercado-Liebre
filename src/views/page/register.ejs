@@ -9,7 +9,7 @@
 
     <main>
         <!-- enctype: no recibe solo texto, permite i multer -->
-        <form action="/crea-tu-cuenta" method="POST" enctype="multipart/form-data" class="register-form">
+        <form action="/registrarse" method="POST" enctype="multipart/form-data" class="register-form">
 
             <% if(locals.errors) {%>
                 <% for (let oneError in errors) { %>

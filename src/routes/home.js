@@ -37,9 +37,9 @@ const validaciones = [
 router.get('/', controller.home);
 
 // ruta de creacion de cuenta
-router.get('/crea-tu-cuenta', controller.create);
+router.get('/registrarse', controller.create);
 // procesar el registro, con multer y validaciones
-router.post('/crea-tu-cuenta', uploadFile.single('avatar'), validaciones, controller.processCreate);
+router.post('/registrarse', uploadFile.single('avatar'), validaciones, controller.processCreate);
 
 // ruta de logueo
 router.get('/ingresa', controller.login);
