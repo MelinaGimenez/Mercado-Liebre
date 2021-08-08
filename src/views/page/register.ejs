@@ -9,7 +9,7 @@
 
     <main>
         <!-- enctype: no recibe solo texto, permite i multer -->
-        <form action="/crea-tu-cuenta" method="POST" enctype="multipart/form-data" class="formulario">
+        <form action="/crea-tu-cuenta" method="POST" enctype="multipart/form-data" class="register-form">
 
             <% if(locals.errors) {%>
                 <% for (let oneError in errors) { %>
@@ -17,88 +17,98 @@
                 <% } %>
             <% } %>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Nombre y Apellido</label>
-                <input type="text" name="nombre" class="para-escribir
-                <%= locals.errors && locals.nombre ? 'is-invalid' : null %>
+            <div class="register-sections">
+                <label>Nombre y Apellido
+                    <input type="text" name="nombre
+                    <%= locals.errors && locals.nombre ? 'is-invalid' : null %>
                 ">
+                </label>
                 <% if (locals.errors && errors.nombre) { %>
                     <div class="msjError"><%= errors.nombre.msj %></div>
                 <% } %>
             </div>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Nombre de usuario</label>
-                <input type="text" name="usuario" class="para-escribir
-                <%= locals.errors && locals.usuario ? 'is-invalid' : null %>">
+            <div class="register-sections">
+                <label>Nombre de usuario
+                    <input type="text" name="usuario
+                    <%= locals.errors && locals.usuario ? 'is-invalid' : null %>">
+                </label>
                 <% if (locals.errors && errors.usuario) { %>
                     <div class="msjError"><%= errors.usuario.msj %></div>
                 <% } %>
             </div>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Fecha de nacimiento</label>
-                <input type="date" name="nacimiento" class="para-escribir">
-            </div>
-
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Domicilio</label>
-                <input type="text" name="domicilio" class="para-escribir">
-            </div>
-
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Perfil del usuaro</label>
-                <select name="perfils" >
-                    <option value="">Seleccionar perfil</option>
-                    <% let perfiles = ['Comprador', 'Vendedor', 'Comprador y vendedor']; %>
-                    <% for (const perfil of perfiles) { %>
-                    <option value="<%= perfil %>"> <%= perfil %> </option>
-                    <% } %>
-                </select>
-            </div>
-
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Categoría de interés</label>
-                <label class="opciones"> Electro
-                    <input type="checkbox" name="categorias" value="electro">
-                </label>
-                <label class="opciones">Moda
-                    <input type="checkbox" name="categorias" value="moda">
-                </label>
-                <label class="opciones"> Hogar
-                    <input type="checkbox" name="categorias" value="hogar">
-                </label>
-                <label class="opciones"> Juguetería
-                    <input type="checkbox" name="categorias" value="jugueteria">
-                </label>
-                <label class="opciones"> Vida Sana
-                    <input type="checkbox" name="categorias" value="vida-sana">
+            <div class="register-sections">
+                <label>Fecha de nacimiento
+                    <input type="date" name="nacimiento">
                 </label>
             </div>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Foto de usuario</label>
+            <div class="register-sections">
+                <label>Domicilio
+                    <input type="text" name="domicilio">
+                </label>
+            </div>
+
+            <div class="register-sections">
+                <label>Perfil del usuaro
+                    <select name="perfils">
+                        <option value="">Seleccionar perfil</option>
+                        <% let perfiles = ['Comprador', 'Vendedor', 'Comprador y vendedor']; %>
+                        <% for (const perfil of perfiles) { %>
+                        <option value="<%= perfil %>"> <%= perfil %> </option>
+                        <% } %>
+                    </select>
+                </label>
+            </div>
+
+            <div class="register-sections-category">
+                <label>Categoría de interés</label>
+                    <label class="category-options"> Electro
+                        <input type="checkbox" name="categorias" value="electro">
+                    </label>
+                    <label class="category-options">Moda
+                        <input type="checkbox" name="categorias" value="moda">
+                    </label>
+                    <label class="category-options"> Hogar
+                        <input type="checkbox" name="categorias" value="hogar">
+                    </label>
+                    <label class="category-options"> Juguetería
+                        <input type="checkbox" name="categorias" value="jugueteria">
+                    </label>
+                    <label class="category-options"> Vida Sana
+                        <input type="checkbox" name="categorias" value="vida-sana">
+                </label>
+            </div>
+
+            <div class="register-sections">
+                <label>Foto de usuario
                     <input type="file" name="avatar">
                 </label>
             </div>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Email</label>
-                <input type="text" name="mail" class="para-escribir">
+            <div class="register-sections">
+                <label>Email
+                    <input type="text" name="mail">
+                </label>
             </div>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Contraseña</label>
-                <input type="password" name="contrasenia" class="para-escribir">
+            <div class="register-sections">
+                <label>Contraseña
+                    <input type="password" name="contrasenia">
+                </label>
             </div>
 
-            <div class="partes-formulario">
-                <label class="titulos-formulario">Confirmar contraseña</label>
-                <input type="password" name="contrasenia" class="para-escribir">
+            <div class="register-sections">
+                <label>Confirmar contraseña
+                    <input type="password" name="contrasenia">
+                </label>
             </div>
 
-            <button type="submit" class="boton">Ingresar</button></a>
-            <button type="reset" class="boton">Borrar</button>
+            <div class="register-button">
+                <button type="submit">Ingresar</button></a>
+                <button type="reset">Borrar</button>
+            </div>
 
         </form>
     </main>
